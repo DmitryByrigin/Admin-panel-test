@@ -2,10 +2,17 @@ import React from 'react'
 import CardStyles from './Profile.module.sass';
 import { AppContext } from '../../../App';
 
+
 export default function Profile() {
 
   return (
-    <form className="w-full max-w-lg">
+
+    <div className='grid gap-6 grid-cols-2 p-[5px]'>
+    <div className='info'>
+      <img src={require('../../../img/3.jpg')} alt="" className='rounded-[100%] max-w-[50%]'/>
+      <p>Hi Jane!</p>
+    </div>
+    <form className="profile">
     <div className="flex flex-wrap -mx-3 mb-6">
       <div className="w-full md:w-1/2 px-3 mb-6 md:mb-0">
         <label className="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" htmlFor="grid-first-name">
@@ -19,6 +26,14 @@ export default function Profile() {
           Last Name
         </label>
         <input className="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500" id="grid-last-name" type="text" placeholder="Doe"/>
+      </div>
+    </div>
+    <div className="flex flex-wrap -mx-3 mb-6">
+      <div className="w-full px-3">
+        <label className="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" htmlFor="grid-password">
+          E-Mail
+        </label>
+        <input className="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-gray-500" id="grid" type="email" placeholder="For example: test@mail.ru"/>
       </div>
     </div>
     <div className="flex flex-wrap -mx-3 mb-6">
@@ -60,5 +75,6 @@ export default function Profile() {
       </div>
     </div>
   </form>
+  </div>
   );
 }

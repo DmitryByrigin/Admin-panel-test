@@ -1,7 +1,10 @@
 import React from 'react'
 import CardStyles from './Registration.module.sass';
+import { AppContext } from '../../../App';
 
 export default function Registration() {
+  const {LoginValue, OnClickLoginButton, SetLoginValue, PassValue, SetPassValue, OnCangeLoginInput, OnCangePassInput} = React.useContext(AppContext);
+
   return (
     <main className='container mx-auto'>
         <section className='authorization items-center h-screen grid gap-x-10 grid-cols-[1fr_1fr] justify-center max-[640px]:grid-cols-[1fr]'>
@@ -12,12 +15,12 @@ export default function Registration() {
 
             <aside className='justify-start grid'>
                 <h1>Enter in system</h1>
-                <input placeholder="Login or email" type="text"/>
-                <input placeholder="Password" type="text"/>
+                <input onChange={OnCangeLoginInput} value={LoginValue} placeholder="Login or email" type="text"/>
+                <input type="password" onChange={OnCangePassInput} value={PassValue} placeholder="Password"/>
                 <h3>Any Error</h3>
                 <a href=""><p>Foget passowrd?</p></a>
                 <a href=""><p>Don't have an account? Register</p></a>
-                <button>Enter</button>
+                <button onClick={OnClickLoginButton}>Enter</button>
             </aside>
 
         </section>

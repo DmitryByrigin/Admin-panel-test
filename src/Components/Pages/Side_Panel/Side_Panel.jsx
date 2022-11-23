@@ -38,7 +38,7 @@ export default function Side_Panel() {
             !open && "scale-0"
           }`}
         >
-        
+          
           Admin Panel
         </h1>
         
