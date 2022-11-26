@@ -18,8 +18,8 @@ export default function Registration() {
                 <input onChange={OnCangeLoginInput} value={LoginValue} placeholder="Login or email" type="text"/>
                 <input type="password" onChange={OnCangePassInput} value={PassValue} placeholder="Password"/>
                 <h3>Any Error</h3>
-                <a href=""><p>Foget passowrd?</p></a>
-                <a href=""><p>Don't have an account? Register</p></a>
+                <a href=""><h4>Foget passowrd?</h4></a>
+                <a href=""><h4>Don't have an account? Register</h4></a>
                 <button onClick={OnClickLoginButton}>Enter</button>
             </aside>
 
