@@ -6,11 +6,42 @@ import { useState } from 'react';
 export default function Profile() {
   const[firstName,setFirstName]=useState('');
   const[lastName,setLastName]=useState('');
+  const[password,setPassword]=useState('');
   const[error,setError]=useState(false);
+  const[errorMail,setErrorMail]=useState(false);
+  const[errorPass,setErrorPass]=useState(false);
+  const [state, setState] = useState({
+    email: '',
+    password: '',
+  });
+  const validateEmail = (email) => {
+    const re =
+      /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+    return re.test(String(email).toLowerCase());
+  };
+  const handleChange = (e) => {
+    const { id, value } = e.target;
+    setState((prevState) => ({
+      ...prevState,
+      [id]: value,
+    }));
+  };
   const handleSubmit=(e)=>{
     e.preventDefault();
     if(firstName==0||lastName==0){
       setError(true)
+    }
+    if (!validateEmail(state.email)) {
+      setErrorMail(true);
+    }
+    if (validateEmail(state.email)) {
+      setErrorMail(false);
+    }
+    if(password.length<=7){
+      setErrorPass(true)
+    }
+    if(password.length>=8){
+      setErrorPass(false)
     }
     if(lastName&&firstName){
       console.log(firstName,lastName);
@@ -56,7 +87,8 @@ export default function Profile() {
         <label className="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" htmlFor="grid-password">
           E-Mail
         </label>
-        <input className="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-gray-500" id="email" type="email" placeholder="For example: test@mail.ru"/>
+        <input value={state.email} onChange={handleChange} className="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-gray-500" id="email" type="email" placeholder="For example: test@mail.ru"/>
+        {errorMail && <p className="text-red-500 text-xs italic">Invalid Mail</p>}
       </div>
     </div>
     <div className="flex flex-wrap -mx-3 mb-6">
@@ -64,8 +96,8 @@ export default function Profile() {
         <label className="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" htmlFor="grid-password">
           Password
         </label>
-        <input className="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-gray-500" id="password" type="password" placeholder="******************"/>
-        <p className="text-gray-600 text-xs italic">Make it as long and as crazy as you'd like</p>
+        <input onChange={e=>setPassword(e.target.value)} className="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-gray-500" id="password" type="password" placeholder="******************"/>
+        {errorPass?<div className='error'><p className="text-red-500 text-xs italic">Please set minimum 8 characters.</p></div>:""}
       </div>
     </div>
     <div className="flex flex-wrap -mx-3 mb-2">
