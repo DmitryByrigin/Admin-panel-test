@@ -1,6 +1,8 @@
-import React from 'react';
+import React,{ Component } from 'react';
 import CardStyles from './Team.module.sass';
 import { AppContext } from '../../../App';
+import Profile from '../Profile/Profile';
+import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 
 export default function Team() {
   const { open, setOpen } = React.useContext(AppContext);
@@ -24,7 +26,7 @@ export default function Team() {
               <h4 className="mb-2">Platon Plotonovich</h4>
               <p className="mb-6">Software Engineer</p>
               <button>
-                <h4>Profile</h4>
+                <h4><Link to="<Profile />">ll</Link></h4>
               </button>
             </div>
           </div>

@@ -75,7 +75,7 @@ function App() {
         </header>
 
         <main onClick={() => setOpen(open ? !open : open)}>
-          {LoginSuccess ? <Team /> : <Registration />}
+          {LoginSuccess ? <Profile /> : <Registration />}
         </main>
       </div>
     </AppContext.Provider>
