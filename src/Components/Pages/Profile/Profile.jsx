@@ -47,6 +47,29 @@ export default function Profile() {
       console.log(firstName,lastName);
     }
   }
+
+  const[exp,setExp]=useState("");
+  const[items,setItems]=useState([]);
+  const handleExp=(e)=>{
+    e.preventDefault();
+  }
+  function addItem(){
+    if(!exp){
+      alert("Enter the achievment");
+      return;
+    }
+    const item = {
+      id: Math.floor(Math.random()*1000),
+      value:exp
+    }
+    setItems(oldList=>[...oldList,item]);
+    setExp("");
+    console.log(items)
+  }
+  function deleteItem(id){
+    const newArray = items.filter(item=>item.id !== id);
+    setItems(newArray)
+  }
   return (
     <div className='grid gap-6 grid-cols-2 p-[5px]'>
     <div className='bg-white rounded info m-auto text-left p-[20px]'>
@@ -57,13 +80,25 @@ export default function Profile() {
       <p className='profile__name'>Hi I'm Jane!</p>
       <p className='profile__company'>Profession: Web Dev</p>
       <p className='profile__profession'>Company: Freelance</p>
-      <p className='profile__achievments'>Achievments: 
+      <form onSubmit={handleExp}>
+        <input 
+        type="text"
+        value={exp}
+        onChange={e=>setExp(e.target.value)}
+        className='bg-gray-200 text-gray-700 appearance-none block w-full bg-gray-200 text-gray-700 border border-red-500 rounded py-3 px-4 mb-3 leading-tight focus:outline-none' type="text" />
+        <button onClick={()=>addItem()}>Add the Achievment</button>
         <ul>
-          <li>First</li>
-          <li>Second</li>
-          <li>...</li>
+          {items.map(item=>{
+            return(
+              <React.Fragment>
+              <div className='block'>
+              <li className='min-w-0 inline' key={item.id}>{item.value}</li> <button className='p-[5px] h-auto min-w-0 inline' onClick={()=>deleteItem(item.id)}>x</button>
+              </div>
+              </React.Fragment>
+            )
+          })}
         </ul>
-      </p>
+      </form>
     </div>
     <form onSubmit={handleSubmit} className="bg-white rounded p-[20px]">
     <div className="flex flex-wrap -mx-3 mb-6">
@@ -71,14 +106,14 @@ export default function Profile() {
         <label className="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" htmlFor="grid-first-name">
           First Name
         </label>
-        <input onChange={e=>setFirstName(e.target.value)} className="appearance-none block w-full bg-gray-200 text-gray-700 border border-red-500 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white" id="first-name" type="text" placeholder="Alem"/>
+        <input onChange={e=>setFirstName(e.target.value)} className="appearance-none block w-full bg-gray-200 text-gray-700 border border-red-500 rounded py-3 px-4 mb-3 leading-tight focus:outline-none" id="first-name" type="text" placeholder="Alem"/>
         {error&&firstName.length<=0?<div className='error'><p className="text-red-500 text-xs italic">Please fill out this field.</p></div>:""}
       </div>
       <div className="w-full md:w-1/2 px-3">
         <label className="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" htmlFor="grid-last-name">
           Last Name
         </label>
-        <input onChange={e=>setLastName(e.target.value)} className="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500" id="last-name" type="text" placeholder="Khan" />
+        <input onChange={e=>setLastName(e.target.value)} className="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:border-gray-500" id="last-name" type="text" placeholder="Khan" />
         {error&&lastName.length<=0?<div className='error'><p className="text-red-500 text-xs italic">Please fill out this field.</p></div>:""}
       </div>
     </div>
@@ -87,7 +122,7 @@ export default function Profile() {
         <label className="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" htmlFor="grid-password">
           E-Mail
         </label>
-        <input value={state.email} onChange={handleChange} className="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-gray-500" id="email" type="email" placeholder="For example: test@mail.ru"/>
+        <input value={state.email} onChange={handleChange} className="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:border-gray-500" id="email" type="email" placeholder="For example: test@mail.ru"/>
         {errorMail && <p className="text-red-500 text-xs italic">Invalid Mail</p>}
       </div>
     </div>
@@ -96,7 +131,7 @@ export default function Profile() {
         <label className="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" htmlFor="grid-password">
           Password
         </label>
-        <input onChange={e=>setPassword(e.target.value)} className="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-gray-500" id="password" type="password" placeholder="******************"/>
+        <input onChange={e=>setPassword(e.target.value)} className="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:border-gray-500" id="password" type="password" placeholder="************"/>
         {errorPass?<div className='error'><p className="text-red-500 text-xs italic">Please set minimum 8 characters.</p></div>:""}
       </div>
     </div>
@@ -105,14 +140,14 @@ export default function Profile() {
         <label className="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" htmlFor="grid-city">
           City
         </label>
-        <input className="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500" id="city" type="text" placeholder="Almaty"/>
+        <input className="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:border-gray-500" id="city" type="text" placeholder="Almaty"/>
       </div>
       <div className="w-full md:w-1/3 px-3 mb-6 md:mb-0">
         <label className="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" htmlFor="grid-state">
           Country
         </label>
         <div className="relative">
-          <select className="block appearance-none w-full bg-gray-200 border border-gray-200 text-gray-700 py-3 px-4 pr-8 rounded leading-tight focus:outline-none focus:bg-white focus:border-gray-500" id="country">
+          <select className="block appearance-none w-full bg-gray-200 border border-gray-200 text-gray-700 py-3 px-4 pr-8 rounded leading-tight focus:outline-none focus:border-gray-500" id="country">
             <option>Kazakhstan</option>
             <option>Russia</option>
             <option>Ukraine</option>
