@@ -14,6 +14,11 @@ export default function Profile() {
     email: '',
     password: '',
   });
+  const addName = ()=>{
+    const newName= firstName;
+    setFirstName(newName);
+    console.log(newName);
+  }
   const validateEmail = (email) => {
     const re =
       /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
@@ -71,33 +76,33 @@ export default function Profile() {
     setItems(newArray)
   }
   return (
-    <div className='grid gap-6 grid-cols-2 p-[5px]'>
-    <div className='bg-white rounded info m-auto text-left p-[20px]'>
-      <div className='inline-block relative w-[200px] h-[200px] rounded-[50%] overflow-hidden'>
+    <div className='grid gap-6 grid-cols-2 p-[15px]'>
+    <div className='bg-white rounded info m-auto text-left p-[20px] min-w-full'>
+      <div className='flex m-auto relative w-[200px] h-[200px] rounded-[50%] overflow-hidden'>
         <img src={require('../../../img/3.jpg')} alt="" className='w-[auto] h-[100%]'/>
       </div>
       
-      <p className='profile__name'>Hi I'm Jane!</p>
-      <p className='profile__company'>Profession: Web Dev</p>
-      <p className='profile__profession'>Company: Freelance</p>
-      <form onSubmit={handleExp}>
-        <input 
-        type="text"
-        value={exp}
-        onChange={e=>setExp(e.target.value)}
-        className='bg-gray-200 text-gray-700 appearance-none block w-full bg-gray-200 text-gray-700 border border-red-500 rounded py-3 px-4 mb-3 leading-tight focus:outline-none' type="text" />
-        <button onClick={()=>addItem()}>Add the Achievment</button>
-        <ul>
+      <p className='text-black text-center'>Hi I'm {firstName}!</p>
+      <ul>
+        
           {items.map(item=>{
             return(
               <React.Fragment>
-              <div className='block'>
-              <li className='min-w-0 inline' key={item.id}>{item.value}</li> <button className='p-[5px] h-auto min-w-0 inline' onClick={()=>deleteItem(item.id)}>x</button>
+              <div className='flex justify-between items-center border-solid border-gray-300 p-[5px]'>
+                <li className='min-w-0 inline' key={item.id}>{item.value}</li> <button className='py-[5px] m-0 h-auto min-w-0 inline' onClick={()=>deleteItem(item.id)}>x</button>
               </div>
               </React.Fragment>
             )
           })}
         </ul>
+      <form onSubmit={handleExp}>
+        <input 
+        placeholder='Write here your experience'
+        type="text"
+        value={exp}
+        onChange={e=>setExp(e.target.value)}
+        className='bg-gray-200 text-gray-700 appearance-none block w-full bg-gray-200 text-gray-700 border border-red-500 rounded py-3 px-4 mb-3 leading-tight focus:outline-none' />
+        <button onClick={()=>addItem()}>Add the Achievment</button>
       </form>
     </div>
     <form onSubmit={handleSubmit} className="bg-white rounded p-[20px]">
@@ -158,7 +163,7 @@ export default function Profile() {
         </div>
       </div>
       
-        <button className='p-[5px]'>Save</button>
+        <button onClick={addName} className='p-[5px]'>Save</button>
       
     </div>
   </form>
