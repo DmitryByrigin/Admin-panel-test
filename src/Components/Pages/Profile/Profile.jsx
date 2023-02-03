@@ -5,6 +5,12 @@ import { useState } from 'react';
 
 export default function Profile() {
   const[firstName,setFirstName]=useState('');
+  const[nameProfile,setNameProfile]=useState('Default Name');
+  const nameChange = ()=>{
+    if(lastName&&firstName){
+      setNameProfile(firstName)
+    }
+  }
   const[lastName,setLastName]=useState('');
   const[password,setPassword]=useState('');
   const[error,setError]=useState(false);
@@ -14,11 +20,6 @@ export default function Profile() {
     email: '',
     password: '',
   });
-  const addName = ()=>{
-    const newName= firstName;
-    setFirstName(newName);
-    console.log(newName);
-  }
   const validateEmail = (email) => {
     const re =
       /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
@@ -76,13 +77,13 @@ export default function Profile() {
     setItems(newArray)
   }
   return (
-    <div className='grid gap-6 grid-cols-2 p-[15px]'>
+    <div className='grid gap-6 lg:grid-cols-2 p-[15px] sm:grid-cols-1'>
     <div className='bg-white rounded info m-auto text-left p-[20px] min-w-full'>
       <div className='flex m-auto relative w-[200px] h-[200px] rounded-[50%] overflow-hidden'>
         <img src={require('../../../img/3.jpg')} alt="" className='w-[auto] h-[100%]'/>
       </div>
       
-      <p className='text-black text-center'>Hi I'm {firstName}!</p>
+      <p className='text-black text-center'>Hi I'm {nameProfile}!</p>
       <ul>
         
           {items.map(item=>{
@@ -97,12 +98,12 @@ export default function Profile() {
         </ul>
       <form onSubmit={handleExp}>
         <input 
-        placeholder='Write here your experience'
+        placeholder='Write here yourself'
         type="text"
         value={exp}
         onChange={e=>setExp(e.target.value)}
         className='bg-gray-200 text-gray-700 appearance-none block w-full bg-gray-200 text-gray-700 border border-red-500 rounded py-3 px-4 mb-3 leading-tight focus:outline-none' />
-        <button onClick={()=>addItem()}>Add the Achievment</button>
+        <button onClick={()=>addItem()}>Add</button>
       </form>
     </div>
     <form onSubmit={handleSubmit} className="bg-white rounded p-[20px]">
@@ -163,7 +164,7 @@ export default function Profile() {
         </div>
       </div>
       
-        <button onClick={addName} className='p-[5px]'>Save</button>
+        <button onClick={nameChange} className='p-[5px]'>Save</button>
       
     </div>
   </form>
