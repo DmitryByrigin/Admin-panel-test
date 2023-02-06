@@ -1,7 +1,7 @@
 import React from 'react';
 import CardStyles from './Profile.module.sass';
 import { AppContext } from '../../../App';
-import { useState } from 'react';
+import { useState,useEffect } from 'react';
 
 export default function Profile() {
   const[firstName,setFirstName]=useState('');
@@ -54,28 +54,64 @@ export default function Profile() {
     }
   }
 
-  const[exp,setExp]=useState("");
-  const[items,setItems]=useState([]);
-  const handleExp=(e)=>{
-    e.preventDefault();
+  const [text,setText] = useState('');
+  const [textEdit,setTextEdit] = useState('');
+  const [tips,setTips] = useState([{text:'Profession: Web-Developer',edit:false,opened:false}]);
+  const [opened,setOpened] = useState(false)
+
+  const handleChangeText =(e)=>{
+    setText(e.target.value)
   }
-  function addItem(){
-    if(!exp){
-      alert("Enter the achievment");
-      return;
+  const handleChangeEdit =(e)=>{
+    setTextEdit(e.target.value)
+  }
+  const addClick = ()=>{
+    setTips([...tips,{text,edit:false,opened:false}]);
+    setText('')
+    setTextEdit('')
+  }
+  const deleteTip = (index) =>{
+    setTips(tips.filter((_,i)=>i!== index))
+  }
+  const deleteTipChanger = (index) =>{
+    setTips(tips.filter((_,i)=>i!== index))
+    if(opened==true){
+      setOpened(false)
     }
-    const item = {
-      id: Math.floor(Math.random()*1000),
-      value:exp
+  }
+  const editTip = (index) =>{
+    if(opened==false){
+      setTips(tips.map((obj,i)=>
+    {
+      if(index==i){
+        setOpened(!opened)
+        obj.edit=!obj.edit;
+      }
+      return obj;
+    }),)
     }
-    setItems(oldList=>[...oldList,item]);
-    setExp("");
-    console.log(items)
-  }
-  function deleteItem(id){
-    const newArray = items.filter(item=>item.id !== id);
-    setItems(newArray)
-  }
+  };
+  const changer = (index) =>{
+    if(opened==true){
+      setTips(tips.map((obj,i)=>
+      {
+        if(index==i){
+          setOpened(!opened)
+          obj.edit=!obj.edit;
+          obj.text=textEdit;
+        }
+        return obj;
+      }),)
+
+    }
+  };
+  useEffect(() => {
+    console.log("Something is Updated");
+    return()=>{
+      console.log("Deleted")
+    }
+  },[])
+  
   return (
     <div className='grid gap-6 lg:grid-cols-2 p-[15px] sm:grid-cols-1'>
     <div className='bg-white rounded info m-auto text-left p-[20px] min-w-full'>
@@ -84,27 +120,33 @@ export default function Profile() {
       </div>
       
       <p className='text-black text-center'>Hi I'm {nameProfile}!</p>
-      <ul>
+      
+      <input className='appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:border-gray-500'
+          type="text"
+          placeholder='Write here about yourself'
+          onChange={handleChangeText} 
+          value={text}
+        />
+      <button onClick={addClick}>Add</button>   
+      {tips.map((obj,i)=>(
+        <div>
+          {obj.edit?(
+            <div><input className='appearance-none inline-block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:border-gray-500'
+            type="text"
+            placeholder='Edit about yourself'
+            onChange={handleChangeEdit}
+            value={textEdit}  
+          />
+          <button onClick={()=>changer(i)}>Change</button>
+          <button onClick={()=>deleteTipChanger(i)}>Del</button>
+          </div>
+          ):(<div><p className='text-black text-[26px]' key={i}>{obj.text}</p>
+          <button onClick={()=>editTip(i)}>Edit</button>
+          <button onClick={()=>deleteTip(i)}>Del</button></div>)}
+        </div>
+      ))}
         
-          {items.map(item=>{
-            return(
-              <React.Fragment>
-              <div className='flex justify-between items-center border-solid border-gray-300 p-[5px]'>
-                <li className='min-w-0 inline' key={item.id}>{item.value}</li> <button className='py-[5px] m-0 h-auto min-w-0 inline' onClick={()=>deleteItem(item.id)}>x</button>
-              </div>
-              </React.Fragment>
-            )
-          })}
-        </ul>
-      <form onSubmit={handleExp}>
-        <input 
-        placeholder='Write here yourself'
-        type="text"
-        value={exp}
-        onChange={e=>setExp(e.target.value)}
-        className='bg-gray-200 text-gray-700 appearance-none block w-full bg-gray-200 text-gray-700 border border-red-500 rounded py-3 px-4 mb-3 leading-tight focus:outline-none' />
-        <button onClick={()=>addItem()}>Add</button>
-      </form>
+
     </div>
     <form onSubmit={handleSubmit} className="bg-white rounded p-[20px]">
     <div className="flex flex-wrap -mx-3 mb-6">
