@@ -73,9 +73,8 @@ function App() {
 
           <Side_Panel />
         </header>
-
         <main onClick={() => setOpen(open ? !open : open)}>
-          {LoginSuccess ? <Profile /> : <Registration />}
+          {LoginSuccess ? <Team /> : <Registration />}
         </main>
       </div>
     </AppContext.Provider>
