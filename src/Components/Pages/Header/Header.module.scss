@@ -1,0 +1,13 @@
+header,
+ul,
+li {
+  display: grid;
+  align-items: center;
+  justify-items: start;
+}
+li {
+  grid-template-columns: 1fr 2fr;
+  justify-items: start !important;
+  column-gap: 5%;
+  cursor: pointer;
+}
