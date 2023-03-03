@@ -1,6 +1,7 @@
 import React from 'react';
 import CardStyles from './Side_Panel.module.sass';
 import { AppContext } from '../../../App';
+import { IconMenu2 } from '@tabler/icons-react';
 
 export default function Side_Panel() {
   const { open, setOpen } = React.useContext(AppContext);
@@ -49,8 +50,10 @@ export default function Side_Panel() {
          border-2 rounded-full  ${!open && 'rotate-180'}`}
           onClick={() => setOpen(!open)}
         />
-        <div className="flex gap-x-4 items-center">
-          <h4 className={`duration-200 ${!open && 'scale-0'}`}>Admin Panel</h4>
+        <div className="grid grid-cols-[1fr_1fr] justify-items-center items-center">
+          <img className='w-9' src={require('../../../img/logo.webp')} alt="" />
+          {/* <h4 className={`duration-200 ${!open && 'scale-0'}`}>Admin Panel</h4> */}
+          <IconMenu2  className={`duration-200 ${!open && 'scale-0'}`} color="white"/>
         </div>
         <ul className="pt-6">
           {Menus.map((Menu, index) => (

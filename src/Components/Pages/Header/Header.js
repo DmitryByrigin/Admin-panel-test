@@ -10,11 +10,11 @@ export default function Header() {
     <header
       className={`container mx-auto  min-[1280px]:max-w-[1700px] ${CardStyles.header} max-[640px]:max-w-[768px] min-h-[87px] min-[1024px]:max-w-[1700px] p-4 min-[640px]:max-w-[768px]`}>
       <ul className="gap-x-0.5 grid-cols-[1fr_1fr_4fr_1fr_1fr_1fr] max-[1024px]:grid-cols-[1fr_1fr_2fr_1fr_1fr_1fr] ">
-        <li className="justify-items-end">
+        <li onClick={() => setOpen(!open)} className="justify-items-end">
           <IconMenu2 color="white" size={34} />
 
           <h4 className="max-[545px]:hidden max-[1280px]:text-base">Menu</h4>
-        </li>{' '}
+        </li>
         <li>
           <IconSettings color="white" size={34} />
           <h4 className="max-[545px]:hidden max-[1280px]:text-base">Sets</h4>
