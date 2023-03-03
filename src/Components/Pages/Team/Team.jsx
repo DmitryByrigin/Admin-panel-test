@@ -18,15 +18,15 @@ export default function Team() {
             <div className="mb-8">
               <img
                 className="object-center object-cover rounded-full h-36 w-36"
-                src="https://images.unsplash.com/flagged/photo-1570612861542-284f4c12e75f?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1170&q=80"
+                src="https://avatars.githubusercontent.com/u/83762401?v=4"
                 alt="photo"
               />
             </div>
             <div className="text-center">
-              <h4 className="mb-2">Platon Plotonovich</h4>
-              <p className="mb-6">Software Engineer</p>
+              <h4 className="mb-2">Дмитрий Бурыгин</h4>
+              <p className="mb-6">Frontend-разработчик</p>
               <button>
-                <h4><Link to="<Profile />">ll</Link></h4>
+                <h4>ll</h4>
               </button>
             </div>
           </div>
@@ -40,8 +40,42 @@ export default function Team() {
               />
             </div>
             <div className="text-center">
-              <h4 className="mb-2">Platon Plotonovich</h4>
-              <p className="mb-6">Software Engineer</p>
+              <h4 className="mb-2">Алем Бексеит</h4>
+              <p className="mb-6">Frontend-разработчик</p>
+              <button>
+                <h4>ll</h4>
+              </button>
+            </div>
+          </div>
+
+          <div className="w-full bg-gray-900 rounded-2xl sahdow-lg p-12 grid grid-cols-[1fr] justify-items-center align-items-center">
+            <div className="mb-8">
+              <img
+                className="object-center object-cover rounded-full h-36 w-36"
+                src="https://images.unsplash.com/flagged/photo-1570612861542-284f4c12e75f?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1170&q=80"
+                alt="photo"
+              />
+            </div>
+            <div className="text-center">
+              <h4 className="mb-2">Платон Логвиненко</h4>
+              <p className="mb-6">Frontend-разработчик</p>
+              <button>
+                <h4>ll</h4>
+              </button>
+            </div>
+          </div>
+
+          <div className="w-full bg-gray-900 rounded-2xl sahdow-lg p-12 grid grid-cols-[1fr] justify-items-center align-items-center">
+            <div className="mb-8">
+              <img
+                className="object-center object-cover rounded-full h-36 w-36"
+                src="https://images.unsplash.com/flagged/photo-1570612861542-284f4c12e75f?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1170&q=80"
+                alt="photo"
+              />
+            </div>
+            <div className="text-center">
+              <h4 className="mb-2">Артем Пономарев</h4>
+              <p className="mb-6">Frontend-разработчик</p>
               <button>
                 <h4>Profile</h4>
               </button>
@@ -57,8 +91,8 @@ export default function Team() {
               />
             </div>
             <div className="text-center">
-              <h4 className="mb-2">Platon Plotonovich</h4>
-              <p className="mb-6">Software Engineer</p>
+              <h4 className="mb-2">Татьяна Краснобрижая</h4>
+              <p className="mb-6">Frontend-разработчик</p>
               <button>
                 <h4>Profile</h4>
               </button>
@@ -66,19 +100,19 @@ export default function Team() {
           </div>
         </div>
 
-        <h2>React Sneakers</h2>
+        <h2>Pizza</h2>
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-8">
           <div className="w-full bg-gray-900 rounded-2xl sahdow-lg p-12 grid grid-cols-[1fr] justify-items-center align-items-center">
             <div className="mb-8">
               <img
                 className="object-center object-cover rounded-full h-36 w-36"
-                src="https://images.unsplash.com/flagged/photo-1570612861542-284f4c12e75f?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1170&q=80"
+                src="https://avatars.githubusercontent.com/u/83762401?v=4"
                 alt="photo"
               />
             </div>
             <div className="text-center">
-              <h4 className="mb-2">Platon Plotonovich</h4>
-              <p className="mb-6">Software Engineer</p>
+              <h4 className="mb-2">Дмитрий Бурыгин</h4>
+              <p className="mb-6">Frontend-разработчик</p>
               <button>
                 <h4>Profile</h4>
               </button>
@@ -94,8 +128,8 @@ export default function Team() {
               />
             </div>
             <div className="text-center">
-              <h4 className="mb-2">Platon Plotonovich</h4>
-              <p className="mb-6">Software Engineer</p>
+              <h4 className="mb-2">Платон Логвиненко</h4>
+              <p className="mb-6">Frontend-разработчик</p>
               <button>
                 <h4>Profile</h4>
               </button>
@@ -111,8 +145,27 @@ export default function Team() {
               />
             </div>
             <div className="text-center">
-              <h4 className="mb-2">Platon Plotonovich</h4>
-              <p className="mb-6">Software Engineer</p>
+              <h4 className="mb-2">Алем Бексеит</h4>
+              <p className="mb-6">Frontend-разработчик</p>
+              <button>
+                <h4>Profile</h4>
+              </button>
+            </div>
+          </div>
+        </div>
+        <h2>Pizza</h2>
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-8">
+          <div className="w-full bg-gray-900 rounded-2xl sahdow-lg p-12 grid grid-cols-[1fr] justify-items-center align-items-center">
+            <div className="mb-8">
+              <img
+                className="object-center object-cover rounded-full h-36 w-36"
+                src="https://avatars.githubusercontent.com/u/83762401?v=4"
+                alt="photo"
+              />
+            </div>
+            <div className="text-center">
+              <h4 className="mb-2">Дмитрий Бурыгин</h4>
+              <p className="mb-6">Frontend-разработчик</p>
               <button>
                 <h4>Profile</h4>
               </button>
