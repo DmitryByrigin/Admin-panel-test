@@ -1,6 +1,7 @@
 import React from 'react';
 import CardStyles from './Header.module.scss';
 import { AppContext } from '../../../App';
+import { Link } from 'react-router-dom';
 import { IconMail, IconSettings, IconMenu2, IconUserCircle, IconLogout } from '@tabler/icons-react';
 
 export default function Header() {
@@ -22,10 +23,12 @@ export default function Header() {
           <IconMail color="white" size={34} />
           <h4 className="max-[545px]:hidden max-[1280px]:text-base">Letter</h4>
         </li>
-        <li>
-          <IconUserCircle color="white" size={34} />
-          <h4 className="max-[545px]:hidden max-[1280px]:text-base">Profil</h4>
-        </li>
+        <Link to="/profile">
+          <li>
+            <IconUserCircle color="white" size={34} />
+            <h4 className="max-[545px]:hidden max-[1280px]:text-base">Profile</h4>
+          </li>
+        </Link>
         <li>
           <IconLogout color="white" size={34} />
           <h4 className="max-[545px]:hidden max-[1280px]:text-base">Exit</h4>
