@@ -6,6 +6,7 @@ import Registration from './Components/Pages/Registration/Registration';
 import Side_Panel from './Components/Pages/Side_Panel/Side_Panel';
 import Profile from './Components/Pages/Profile/Profile';
 import Team from './Components/Pages/Team/Team';
+import Calendar from './Components/Pages/Calendar/calendar';
 
 export const AppContext = React.createContext({});
 
@@ -74,7 +75,7 @@ function App() {
           <Side_Panel />
         </header>
         <main onClick={() => setOpen(open ? !open : open)}>
-          {LoginSuccess ? <Profile /> : <Registration />}
+          {LoginSuccess ? <Calendar /> : <Registration />}
         </main>
       </div>
     </AppContext.Provider>
