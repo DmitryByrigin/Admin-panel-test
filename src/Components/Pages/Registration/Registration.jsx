@@ -1,5 +1,5 @@
 import React from 'react';
-import CardStyles from './Registration.module.sass';
+// import CardStyles from './Registration.module.sass';
 import { AppContext } from '../../../App';
 
 export default function Registration() {

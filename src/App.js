@@ -6,9 +6,14 @@ import Registration from './Components/Pages/Registration/Registration';
 import Side_Panel from './Components/Pages/Side_Panel/Side_Panel';
 import Cart from './Components/Cart';
 import Team from './Components/Pages/Team/Team';
+<<<<<<< HEAD
 import Shop from './Components/Pages/Shop';
 import {Routes,Route} from 'react-router';
 import Profile from './Components/Pages/Profile/Profile';
+=======
+import Calendar from './Components/Pages/Calendar/calendar';
+
+>>>>>>> 8e686d5f8678cfffad85eae7b11842ed3933dd7d
 export const AppContext = React.createContext({});
 
 function App() {
@@ -76,6 +81,7 @@ function App() {
           <Side_Panel />
         </header>
         <main onClick={() => setOpen(open ? !open : open)}>
+<<<<<<< HEAD
             {/* <Routes>
               <Route path="/shop" element={Shop}/>
               <Route path="/cart" element={Cart}/>
@@ -83,6 +89,9 @@ function App() {
               <Route path="/registration" element={Registration}/>
             </Routes> */}
           {LoginSuccess ? <Shop /> : <Registration />}
+=======
+          {LoginSuccess ? <Calendar /> : <Registration />}
+>>>>>>> 8e686d5f8678cfffad85eae7b11842ed3933dd7d
         </main>
       </div>
     </AppContext.Provider>

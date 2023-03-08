@@ -1,14 +1,14 @@
-import React,{ Component } from 'react';
+import React, { Component } from 'react';
 import CardStyles from './Team.module.sass';
 import { AppContext } from '../../../App';
 import Profile from '../Profile/Profile';
-import { BrowserRouter as Router, Route, Link } from "react-router-dom";
+import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
 
 export default function Team() {
   const { open, setOpen } = React.useContext(AppContext);
   return (
     <div className="">
-      <section className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-4 py-12">
+      <section className="w-full max-w-8xl mx-auto px-4 sm:px-6 lg:px-4 py-12">
         <div className="text-left">
           <h1>Команда и проекты</h1>
         </div>
@@ -40,7 +40,7 @@ export default function Team() {
               />
             </div>
             <div className="text-center">
-              <h4 className="mb-2">Алем Бексеит</h4>
+              <h4 className="mb-2">Алемхан Бексеит</h4>
               <p className="mb-6">Frontend-разработчик</p>
               <button>
                 <h4>ll</h4>

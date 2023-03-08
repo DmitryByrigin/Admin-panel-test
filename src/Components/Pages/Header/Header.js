@@ -1,53 +1,54 @@
 import React from 'react'
-// import CardStyles from './Header.module.sass';
+import CardStyles from './Header.module.sass';
 import { AppContext } from '../../../App';
-import { CgMenuGridR } from "react-icons/cg";
+import { Link } from 'react-router-dom';
+import { IconMail, IconSettings, IconMenu2, IconUserCircle, IconLogout } from '@tabler/icons-react';
 
 export default function Header() {
-  const {open, setOpen} = React.useContext(AppContext);
+  const { open, setOpen } = React.useContext(AppContext);
   return (
-   
-   <section className='bg-[#198754] w-full grid items-center justify-items-center'>
-    
-    <ul className="header_ul grid w-full min-h-[50%] items-center grid-cols-6 grid-rows-[1fr] max-[1024px]:gap-0">
-        <li className="list-none justify-items-start gap-2 m-3 grid grid-cols-[15%_1fr] max-[1024px]:grid-cols-[1fr] max-[1024px]:justify-items-center">
-            <CgMenuGridR onClick={() => setOpen(!open)} color="white" className="grid cursor-pointer text-3xl justify-items-start max-[1024px]:text-5xl"/>
-            <h4 onClick={() => setOpen(!open)} className="cursor-pointer grid justify-items-start max-[1024px]:hidden">Fhhhhhhdhh</h4>
-            
-        </li>
+    <header
+      className={`container mx-auto  min-[1280px]:max-w-[1700px] ${CardStyles.header} max-[640px]:max-w-[768px] min-h-[87px] min-[1024px]:max-w-[1700px] p-4 min-[640px]:max-w-[768px]`}>
+      <ul className="gap-x-0.5 grid-cols-[1fr_1fr_4fr_1fr_1fr_1fr] max-[1024px]:grid-cols-[1fr_1fr_2fr_1fr_1fr_1fr] ">
+        <li onClick={() => setOpen(!open)} className="justify-items-end">
+          <IconMenu2 color="white" size={34} />
 
-        <li className="list-none justify-items-start gap-2 m-3 grid grid-cols-[15%_1fr] max-[1024px]:grid-cols-[1fr] max-[1024px]:justify-items-center">
-            <CgMenuGridR color="white" className="grid cursor-pointer text-3xl justify-items-start max-[1024px]:text-5xl"/>
-            <h4 className="grid cursor-pointer justify-items-start max-[1024px]:hidden">Fhhhhhhdhh</h4>
-            
+          <h4 className="max-[545px]:hidden max-[1280px]:text-base">Menu</h4>
         </li>
-
-        {/* <div></div> */}
-        <li className="list-none justify-items-start gap-2 m-3 grid grid-cols-[15%_1fr] max-[1024px]:grid-cols-[1fr] max-[1024px]:justify-items-center">
-            <CgMenuGridR color="white" className="grid cursor-pointer text-3xl justify-items-start max-[1024px]:text-5xl"/>
-            <h4 className="grid cursor-pointer justify-items-start max-[1024px]:hidden">Fhhhhhhdhh</h4>
-            
+        <li>
+          <IconSettings color="white" size={34} />
+          <h4 className="max-[545px]:hidden max-[1280px]:text-base">Sets</h4>
         </li>
-        
-        <li className="list-none justify-items-start gap-2 m-3 grid grid-cols-[15%_1fr] max-[1024px]:grid-cols-[1fr] max-[1024px]:justify-items-center">
-            <CgMenuGridR color="white" className="grid cursor-pointer text-3xl justify-items-start max-[1024px]:text-5xl"/>
-            <h4 className="grid cursor-pointer justify-items-start max-[1024px]:hidden">Fhhhhhhdhh</h4>
-            
+        <li>
+          <IconMail color="white" size={34} />
+          <h4 className="max-[545px]:hidden max-[1280px]:text-base">Letter</h4>
         </li>
-
-        <li className="list-none justify-items-start gap-2 m-3 grid grid-cols-[15%_1fr] max-[1024px]:grid-cols-[1fr] max-[1024px]:justify-items-center">
-            <CgMenuGridR color="white" className="grid cursor-pointer text-3xl justify-items-start max-[1024px]:text-5xl"/>
-            <h4 className="grid cursor-pointer justify-items-start max-[1024px]:hidden">Fhhhhhhdhh</h4>
-            
+        <Link to="/profile">
+          <li>
+            <IconUserCircle color="white" size={34} />
+            <h4 className="max-[545px]:hidden max-[1280px]:text-base">Profile</h4>
+          </li>
+        </Link>
+        <li>
+          <IconLogout color="white" size={34} />
+          <h4 className="max-[545px]:hidden max-[1280px]:text-base">Exit</h4>
         </li>
-
-        <li className="list-none justify-items-start gap-2 m-3 grid grid-cols-[15%_1fr] max-[1024px]:grid-cols-[1fr] max-[1024px]:justify-items-center">
-            <CgMenuGridR color="white" className="grid cursor-pointer text-3xl justify-items-start max-[1024px]:text-5xl"/>
-            <h4 className="grid cursor-pointer justify-items-start max-[1024px]:hidden">Fhhhhhhdhh</h4>
-            
+        <li className="gap-x-1 grid-cols-[40%_1fr] max-[710px]:grid-cols-[1fr] max-[710px]:justify-self-center">
+          <div>
+            <img
+              className="rounded-full"
+              width="65px"
+              max-width="1"
+              src={require('../../../img/user.png')}
+              alt="user"
+            />
+          </div>
+          <div className={CardStyles.user}>
+            <h4 className="font-bold text-white max-[840px]:hidden">Platon Platonov</h4>
+            <p className="max-[710px]:hidden max-[840px]:text-white max-[840px]:font-bold">Admin</p>
+          </div>
         </li>
-    </ul>
-   </section>
-
-  )
+      </ul>
+    </header>
+  );
 }

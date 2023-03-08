@@ -11,7 +11,11 @@ root.render(
     <React.StrictMode>
       <App />
     </React.StrictMode>
+<<<<<<< HEAD
   </BrowserRouter>
+=======
+  </BrowserRouter>,
+>>>>>>> 8e686d5f8678cfffad85eae7b11842ed3933dd7d
 );
 
 // If you want to start measuring performance in your app, pass a function
