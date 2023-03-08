@@ -90,7 +90,7 @@ function App() {
             </Routes> */}
           {LoginSuccess ? <Shop /> : <Registration />}
 =======
-          {LoginSuccess ? <Calendar /> : <Registration />}
+          {/* {LoginSuccess ? <Calendar /> : <Registration />} */}
 >>>>>>> 8e686d5f8678cfffad85eae7b11842ed3933dd7d
         </main>
       </div>
