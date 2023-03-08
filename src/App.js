@@ -4,13 +4,15 @@ import Header from './Components/Pages/Header/Header';
 // import Main from './Components/Pages/Main/Main'
 import Registration from './Components/Pages/Registration/Registration';
 import Side_Panel from './Components/Pages/Side_Panel/Side_Panel';
-import Profile from './Components/Pages/Profile/Profile';
+import Cart from './Components/Cart';
 import Team from './Components/Pages/Team/Team';
-
+import Shop from './Components/Pages/Shop';
+import {Routes,Route} from 'react-router';
+import Profile from './Components/Pages/Profile/Profile';
 export const AppContext = React.createContext({});
 
 function App() {
-  let [LoginSuccess, SetSuccess] = React.useState(false);
+  let [LoginSuccess, SetSuccess] = React.useState(true);
 
   const OnClickLoginButton = () => {
     if (LoginValue == '1' && PassValue == '1') {
@@ -74,7 +76,13 @@ function App() {
           <Side_Panel />
         </header>
         <main onClick={() => setOpen(open ? !open : open)}>
-          {LoginSuccess ? <Team /> : <Registration />}
+            {/* <Routes>
+              <Route path="/shop" element={Shop}/>
+              <Route path="/cart" element={Cart}/>
+              <Route path="/profile" element={Profile}/>
+              <Route path="/registration" element={Registration}/>
+            </Routes> */}
+          {LoginSuccess ? <Shop /> : <Registration />}
         </main>
       </div>
     </AppContext.Provider>

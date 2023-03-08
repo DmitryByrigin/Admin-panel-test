@@ -24,6 +24,9 @@ $error-text-color: #DC3545
   margin: 0px
   padding: 0px
   border: none
+body
+   display: grid
+   grid-template-rows: 60px, auto
 
 a:hover, a:visited, a:link, a:active
 
@@ -35,7 +38,7 @@ h1
   font-weight: 900
   font-size: 60px
 
-  margin-bottom: 5%
+  // margin-bottom: 5%
 
 h2
   color: $main-text-color
@@ -77,9 +80,12 @@ input, button
   outline: none
 
   padding: 10px
-  min-width: 200px
+  min-width: 20px
   margin-bottom: 3%
-
+.categories
+  input
+    width: 30px
+    height: 30px
 button
   margin-top: 1%
   height: 60px

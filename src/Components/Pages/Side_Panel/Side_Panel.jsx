@@ -41,7 +41,7 @@ export default function Side_Panel() {
     <div className="flex">
       <div
         className={`${
-          open ? 'w-96 sm:w-36' : 'w-0 sm:w-0'
+          open ? 'w-200 sm:w-36' : 'w-0 sm:w-0'
         } bg-black z-10 absolute h-screen py-3 left-0 top-0 bottom-0 pt-8 duration-300`}>
         <img
           src="https://raw.githubusercontent.com/Sridhar-C-25/sidebar_reactTailwind/main/src/assets/control.png"
