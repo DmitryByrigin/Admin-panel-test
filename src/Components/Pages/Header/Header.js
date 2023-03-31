@@ -1,5 +1,5 @@
-import React from 'react'
-import CardStyles from './Header.module.sass';
+import React from 'react';
+import CardStyles from './Header.module.scss';
 import { AppContext } from '../../../App';
 import { Link } from 'react-router-dom';
 import { IconMail, IconSettings, IconMenu2, IconUserCircle, IconLogout } from '@tabler/icons-react';
