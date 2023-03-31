@@ -4,8 +4,14 @@ import Header from './Components/Pages/Header/Header';
 // import Main from './Components/Pages/Main/Main'
 import Registration from './Components/Pages/Registration/Registration';
 import Side_Panel from './Components/Pages/Side_Panel/Side_Panel';
-import Profile from './Components/Pages/Profile/Profile';
+import Cart from './Components/Cart';
 import Team from './Components/Pages/Team/Team';
+
+import Shop from './Components/Pages/Shop';
+import { Routes, Route } from 'react-router';
+import Profile from './Components/Pages/Profile/Profile';
+
+// import Calendar from './Components/Pages/Calendar/calendar';
 
 export const AppContext = React.createContext({});
 
@@ -15,12 +21,12 @@ function App() {
   const OnClickLoginButton = () => {
     if (LoginValue == '1' && PassValue == '1') {
       LoginSuccess = true;
+      SetSuccess(LoginSuccess);
     } else {
       <Registration />;
     }
 
-    SetSuccess(LoginSuccess);
-    console.log(LoginSuccess);
+    console.log('LoginSuccess', LoginSuccess);
   };
 
   const [LoginValue, SetLoginValue] = React.useState('');
@@ -74,7 +80,15 @@ function App() {
           <Side_Panel />
         </header>
         <main onClick={() => setOpen(open ? !open : open)}>
-          {LoginSuccess ? <Profile /> : <Registration />}
+          <Routes>
+            {/* <Route path="/" element={<Registration />} /> */}
+            {/* <Route path="/shop" element={Shop} /> */}
+            {/* <Route path="/cart" element={Cart} />
+            <Route path="/profile" element={Profile} />
+            <Route path="/registration" element={Registration} /> */}
+          </Routes>
+          {LoginSuccess ? <Shop /> : <Registration />}
+          {/* {LoginSuccess ? <Calendar /> : <Registration />} */}
         </main>
       </div>
     </AppContext.Provider>

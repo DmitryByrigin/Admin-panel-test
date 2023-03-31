@@ -1,0 +1,21 @@
+.root{
+    display: grid;
+    background: #EEE;
+    display: grid;
+    color: black;
+    grid-template-columns: 60px 2fr 1fr 1fr 1fr;
+    label{
+        display: flex;
+        flex-direction: row;
+        justify-content: left;
+        align-items: center;
+    }
+    span{
+        width: 52px;
+        height: 52px;
+    }
+    img{
+        width: 52px;
+        height: 52px;
+    }
+}

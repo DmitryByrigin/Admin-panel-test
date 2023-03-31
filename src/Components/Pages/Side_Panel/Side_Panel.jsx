@@ -55,8 +55,7 @@ export default function Side_Panel() {
   return (
     <div className="flex">
       <div
-        className={`${
-          open ? "w-96 sm:w-44 " : "w-0 sm:w-0"
+        className={`${ open ? "w-96 sm:w-44 " : "w-0 sm:w-0"
         } bg-black z-10 absolute h-screen py-3 left-0 top-0 bottom-0 pt-8 duration-300`}
       >
 

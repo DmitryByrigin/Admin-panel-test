@@ -1,0 +1,17 @@
+.root{
+   
+    display: grid;
+    background-color: #EEE;
+    grid-template-columns: 60px 2fr 1fr 1fr 1fr;
+    img{
+        width:52px;
+        height: 52px;
+    }
+    span{
+        width: 52px;
+        height: 52px;
+        input{
+            width: 10px;
+        }
+    }
+}

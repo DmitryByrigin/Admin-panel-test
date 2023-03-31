@@ -40,7 +40,7 @@ export default function Team() {
               />
             </div>
             <div className="text-center">
-              <h4 className="mb-2">Алем Бексеит</h4>
+              <h4 className="mb-2">Алемхан Бексеит</h4>
               <p className="mb-6">Frontend-разработчик</p>
               <button>
                 <h4>ll</h4>
