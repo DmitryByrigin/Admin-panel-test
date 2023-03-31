@@ -152,7 +152,7 @@ export default function Profile() {
               </div>
             ) : (
               <div>
-                <div class="text-black grid max-w-3xl grid-cols-1 grid-rows-auto grid-auto-rows-min grid-auto-rows-max">
+                <div class="text-black grid max-w-3xl grid-cols-1d grid-rows-auto grid-auto-rows-min grid-auto-rows-max">
                   <h4
                     class="text-black overflow-hidden whitespace-pre-line break-all"
                     key={i}
