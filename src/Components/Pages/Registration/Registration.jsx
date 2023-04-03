@@ -1,6 +1,7 @@
 import React from 'react';
 // import CardStyles from './Registration.module.sass';
 import { AppContext } from '../../../App';
+import { Link } from 'react-router-dom';
 
 export default function Registration() {
   const {
@@ -41,7 +42,9 @@ export default function Registration() {
           <a href="">
             <h4>Don't have an account? Register</h4>
           </a>
-          <button onClick={OnClickLoginButton}>Enter</button>
+          <Link to="/profile">
+            <button onClick={OnClickLoginButton}>Enter</button>
+          </Link>
         </aside>
       </section>
     </main>

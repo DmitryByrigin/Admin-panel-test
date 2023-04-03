@@ -8,10 +8,11 @@ import Cart from './Components/Cart';
 import Team from './Components/Pages/Team/Team';
 
 import Shop from './Components/Pages/Shop';
-import { Routes, Route } from 'react-router';
+import { Route, Routes } from 'react-router-dom';
+
 import Profile from './Components/Pages/Profile/Profile';
 
-// import Calendar from './Components/Pages/Calendar/calendar';
+import Calendar from './Components/Pages/Calendar/calendar';
 
 export const AppContext = React.createContext({});
 
@@ -22,11 +23,12 @@ function App() {
     if (LoginValue == '1' && PassValue == '1') {
       LoginSuccess = true;
       SetSuccess(LoginSuccess);
+      // return <Navigate to="/profile" replace={true} />;
     } else {
       <Registration />;
     }
 
-    console.log('LoginSuccess', LoginSuccess);
+    // console.log('LoginSuccess', LoginSuccess);
   };
 
   const [LoginValue, SetLoginValue] = React.useState('');
@@ -57,42 +59,67 @@ function App() {
       : (document.body.style.background = '');
   }
 
-  return (
-    <AppContext.Provider
-      value={{
-        LoginSuccess,
-        OnClickLoginButton,
-        SetSuccess,
-        ChangeBgProfile,
-        open,
-        setOpen,
-        LoginValue,
-        SetLoginValue,
-        PassValue,
-        SetPassValue,
-        OnCangeLoginInput,
-        OnCangePassInput,
-      }}>
-      <div className="wrapper">
-        <header className="bg-[#198754]">
-          {LoginSuccess ? <Header /> : null}
+  if (LoginSuccess == true) {
+    return (
+      <AppContext.Provider
+        value={{
+          LoginSuccess,
+          OnClickLoginButton,
+          SetSuccess,
+          ChangeBgProfile,
+          open,
+          setOpen,
+          LoginValue,
+          SetLoginValue,
+          PassValue,
+          SetPassValue,
+          OnCangeLoginInput,
+          OnCangePassInput,
+        }}>
+        <div className="wrapper">
+          <header onClick={() => open && setOpen(false)} className="bg-[#198754]">
+            {LoginSuccess ? <Header /> : null}
 
-          <Side_Panel />
-        </header>
-        <main onClick={() => setOpen(open ? !open : open)}>
-          <Routes>
-            {/* <Route path="/" element={<Registration />} /> */}
-            {/* <Route path="/shop" element={Shop} /> */}
-            {/* <Route path="/cart" element={Cart} />
-            <Route path="/profile" element={Profile} />
-            <Route path="/registration" element={Registration} /> */}
-          </Routes>
-          {LoginSuccess ? <Shop /> : <Registration />}
-          {/* {LoginSuccess ? <Calendar /> : <Registration />} */}
-        </main>
-      </div>
-    </AppContext.Provider>
-  );
+            <Side_Panel />
+          </header>
+          <main onClick={() => setOpen(open ? !open : open)}>
+            <Routes>
+              <Route path="/" element={<Registration />} />
+              <Route path="/shop" element={<Shop />} />
+              <Route path="/cart" element={<Cart />} />
+              <Route path="/profile" element={<Profile />} />
+              <Route path="/registration" element={<Registration />} />
+              <Route path="/calendar" element={<Calendar />} />
+              <Route path="/team" element={<Team />} />
+              {/* <Route path="/product" element={<Product />} /> */}
+            </Routes>
+          </main>
+        </div>
+      </AppContext.Provider>
+    );
+  }
+
+  if (LoginSuccess == false) {
+    return (
+      <AppContext.Provider
+        value={{
+          LoginSuccess,
+          OnClickLoginButton,
+          SetSuccess,
+          ChangeBgProfile,
+          open,
+          setOpen,
+          LoginValue,
+          SetLoginValue,
+          PassValue,
+          SetPassValue,
+          OnCangeLoginInput,
+          OnCangePassInput,
+        }}>
+        <Registration />
+      </AppContext.Provider>
+    );
+  }
 }
 
 export default App;
