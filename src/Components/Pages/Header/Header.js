@@ -15,7 +15,8 @@ export default function Header() {
 
   return (
     <header
-      className={`container mx-auto  min-[1280px]:max-w-[1700px] ${CardStyles.header} max-[640px]:max-w-[768px] min-h-[87px] min-[1024px]:max-w-[1700px] p-4 min-[640px]:max-w-[768px]`}>
+      // {`container mx-auto  min-[1280px]:max-w-[1700px] ${CardStyles.header} max-[640px]:max-w-[768px] min-h-[87px] min-[1024px]:max-w-[1700px] p-4 min-[640px]:max-w-[768px]`}
+      className="w-full max-w-8xl mx-auto px-3">
       <ul className="gap-x-0.5 grid-cols-[1fr_1fr_4fr_1fr_1fr_1fr] max-[1024px]:grid-cols-[1fr_1fr_2fr_1fr_1fr_1fr] ">
         <li onClick={() => setOpen(!open)} className="justify-items-end">
           <IconMenu2 color="white" size={34} />
@@ -26,7 +27,7 @@ export default function Header() {
           <IconSettings color="white" size={34} />
           <h4 className="max-[545px]:hidden max-[1280px]:text-base">Sets</h4>
         </li>
-        <li>
+        <li className="mb-0">
           <IconMail color="white" size={34} />
           <h4 className="max-[545px]:hidden max-[1280px]:text-base">Letter</h4>
         </li>
