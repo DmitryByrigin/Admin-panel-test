@@ -1,0 +1,18 @@
+{
+  "files": {
+    "main.css": "/DmitryByrigin/Admin-panel/static/css/main.8a5dc3fa.css",
+    "main.js": "/DmitryByrigin/Admin-panel/static/js/main.c3117072.js",
+    "static/js/787.b5629dd8.chunk.js": "/DmitryByrigin/Admin-panel/static/js/787.b5629dd8.chunk.js",
+    "static/media/2.png": "/DmitryByrigin/Admin-panel/static/media/2.bc631b308eedd04812db.png",
+    "static/media/logo.webp": "/DmitryByrigin/Admin-panel/static/media/logo.e656e7124e3e5820e74d.webp",
+    "static/media/user.png": "/DmitryByrigin/Admin-panel/static/media/user.00a211d522b9e206f5c6.png",
+    "index.html": "/DmitryByrigin/Admin-panel/index.html",
+    "main.8a5dc3fa.css.map": "/DmitryByrigin/Admin-panel/static/css/main.8a5dc3fa.css.map",
+    "main.c3117072.js.map": "/DmitryByrigin/Admin-panel/static/js/main.c3117072.js.map",
+    "787.b5629dd8.chunk.js.map": "/DmitryByrigin/Admin-panel/static/js/787.b5629dd8.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.8a5dc3fa.css",
+    "static/js/main.c3117072.js"
+  ]
+}
