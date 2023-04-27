@@ -1,7 +1,7 @@
 {
   "name": "admin-panel",
   "version": "0.1.0",
-  "homepage": "https://github.com/DmitryByrigin/Admin-panel/",
+  "homepage": "https://dmitrybyrigin.github.io/Admin-panel/",
   "private": true,
   "dependencies": {
     "@fullcalendar/core": "^6.1.4",
