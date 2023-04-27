@@ -1,6 +1,7 @@
 {
   "name": "admin-panel",
   "version": "0.1.0",
+  "homepage": "https://github.com/DmitryByrigin/Admin-panel/",
   "private": true,
   "dependencies": {
     "@fullcalendar/core": "^6.1.4",
@@ -31,7 +32,9 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build"
   },
   "eslintConfig": {
     "extends": [
@@ -55,6 +58,7 @@
     "@types/postcss-css-variables": "^0.18.0",
     "@types/postcss-import": "^14.0.0",
     "autoprefixer": "^10.4.14",
+    "gh-pages": "^5.0.0",
     "postcss": "^8.4.23",
     "postcss-cli": "^10.1.0",
     "postcss-loader": "^7.2.4",
