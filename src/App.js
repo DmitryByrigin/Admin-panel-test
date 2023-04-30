@@ -8,7 +8,7 @@ import Cart from './Components/Cart';
 import Team from './Components/Pages/Team/Team';
 
 import Shop from './Components/Pages/Shop';
-import { Route, Routes } from 'react-router-dom';
+import { Route, Routes, Navigate, useNavigate } from 'react-router-dom';
 
 import Profile from './Components/Pages/Profile/Profile';
 
@@ -17,35 +17,10 @@ import Calendar from './Components/Pages/Calendar/calendar';
 export const AppContext = React.createContext({});
 
 function App() {
-  let [LoginSuccess, SetSuccess] = React.useState(false);
-
-  const OnClickLoginButton = () => {
-    if (LoginValue == '1' && PassValue == '1') {
-      LoginSuccess = true;
-      SetSuccess(LoginSuccess);
-      // return <Navigate to="/profile" replace={true} />;
-    } else {
-      <Registration />;
-    }
-
-    // console.log('LoginSuccess', LoginSuccess);
-  };
-
-  const [LoginValue, SetLoginValue] = React.useState('');
-  const [PassValue, SetPassValue] = React.useState('');
-
-  const OnCangeLoginInput = (event) => {
-    SetLoginValue(event.target.value);
-    console.log(event.target.value);
-  };
-
-  const OnCangePassInput = (event) => {
-    SetPassValue(event.target.value);
-    console.log(event.target.value);
-  };
-
   let [BgProfile, SetBgProfile] = React.useState(false);
   const [open, setOpen] = React.useState(false);
+
+  let [LoginSuccess, SetSuccess] = React.useState(false);
 
   const ChangeBgProfile = () => {
     BgProfile = !BgProfile;
@@ -63,18 +38,19 @@ function App() {
     return (
       <AppContext.Provider
         value={{
-          LoginSuccess,
-          OnClickLoginButton,
+          // LoginSuccess,
+          // onClickEnter,
+          // OnClickLoginButton,
           SetSuccess,
           ChangeBgProfile,
           open,
           setOpen,
-          LoginValue,
-          SetLoginValue,
-          PassValue,
-          SetPassValue,
-          OnCangeLoginInput,
-          OnCangePassInput,
+          // LoginValue,
+          // SetLoginValue,
+          // PassValue,
+          // SetPassValue,
+          // OnCangeLoginInput,
+          // OnCangePassInput,
         }}>
         <div className="wrapper">
           <header onClick={() => open && setOpen(false)} className="bg-[#198754]">
@@ -103,18 +79,19 @@ function App() {
     return (
       <AppContext.Provider
         value={{
-          LoginSuccess,
-          OnClickLoginButton,
+          // LoginSuccess,
+          // onClickEnter,
+          // OnClickLoginButton,
           SetSuccess,
           ChangeBgProfile,
           open,
           setOpen,
-          LoginValue,
-          SetLoginValue,
-          PassValue,
-          SetPassValue,
-          OnCangeLoginInput,
-          OnCangePassInput,
+          // LoginValue,
+          // SetLoginValue,
+          // PassValue,
+          // SetPassValue,
+          // OnCangeLoginInput,
+          // OnCangePassInput,
         }}>
         <Registration />
       </AppContext.Provider>
