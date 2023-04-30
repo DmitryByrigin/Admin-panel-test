@@ -44,7 +44,7 @@ const Calendar = () => {
             {currentEvents.map((event) => (
               <ul key={event.id}>
                 {
-                  <h4 className="text-deepBlackColor">
+                  <h4 className="text-black">
                     {formatDate(event.start, {
                       year: 'numeric',
                       month: 'short',
