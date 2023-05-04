@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/Admin-panel/static/css/main.cdc3edd2.css",
-    "main.js": "/Admin-panel/static/js/main.4244753a.js",
+    "main.css": "/Admin-panel/static/css/main.751b06eb.css",
+    "main.js": "/Admin-panel/static/js/main.8e89536d.js",
     "static/js/787.b5629dd8.chunk.js": "/Admin-panel/static/js/787.b5629dd8.chunk.js",
     "static/media/2.png": "/Admin-panel/static/media/2.bc631b308eedd04812db.png",
     "static/media/tanya.png": "/Admin-panel/static/media/tanya.b7a0f25668a613e6ae6d.png",
@@ -10,12 +10,12 @@
     "static/media/artem.jpg": "/Admin-panel/static/media/artem.664762ec48003633bb52.jpg",
     "static/media/alem.jpg": "/Admin-panel/static/media/alem.d210bc01d0be34d8edac.jpg",
     "index.html": "/Admin-panel/index.html",
-    "main.cdc3edd2.css.map": "/Admin-panel/static/css/main.cdc3edd2.css.map",
-    "main.4244753a.js.map": "/Admin-panel/static/js/main.4244753a.js.map",
+    "main.751b06eb.css.map": "/Admin-panel/static/css/main.751b06eb.css.map",
+    "main.8e89536d.js.map": "/Admin-panel/static/js/main.8e89536d.js.map",
     "787.b5629dd8.chunk.js.map": "/Admin-panel/static/js/787.b5629dd8.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.cdc3edd2.css",
-    "static/js/main.4244753a.js"
+    "static/css/main.751b06eb.css",
+    "static/js/main.8e89536d.js"
   ]
 }
