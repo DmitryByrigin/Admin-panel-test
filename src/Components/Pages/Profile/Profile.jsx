@@ -135,14 +135,14 @@ export default function Profile() {
             className="flex basis-5 gap-2"
             href="https://www.facebook.com/do.right.choice">
             <IconBrandFacebook size={30} />
-            <h3>do.right.choice</h3>
+            <h3 className="mb-3">do.right.choice</h3>
           </a>
           <a
             target="_blank"
             className="flex basis-5 gap-2"
             href="https://www.instagram.com/do_right_choice/">
             <IconBrandInstagram size={30} />
-            <h3>do.right.choice</h3>
+            <h3 className="mb-3">do.right.choice</h3>
           </a>
           <a
             target="_blank"
