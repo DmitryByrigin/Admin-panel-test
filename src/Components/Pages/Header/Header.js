@@ -50,12 +50,12 @@ export default function Header() {
                 className="rounded-full"
                 width="65px"
                 max-width="1"
-                src={require('../../../img/user.png')}
+                src="https://avatars.githubusercontent.com/u/83762401?v=4"
                 alt="user"
               />
             </div>
             <div className={CardStyles.user}>
-              <h4 className="font-bold text-white max-[840px]:hidden">Platon Platonov</h4>
+              <h4 className="font-bold text-white max-[840px]:hidden">Dmitriy Burygin</h4>
               <p className="max-[710px]:hidden max-[840px]:text-white max-[840px]:font-bold">
                 Admin
               </p>

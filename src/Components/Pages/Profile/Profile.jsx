@@ -1,24 +1,25 @@
-import React from "react";
-import CardStyles from "./Profile.module.sass";
-import { AppContext } from "../../../App";
-import { useState, useEffect } from "react";
+import React from 'react';
+import CardStyles from './Profile.module.sass';
+import { AppContext } from '../../../App';
+import { useState, useEffect } from 'react';
+import { IconBrandLinkedin, IconBrandInstagram, IconBrandFacebook } from '@tabler/icons-react';
 
 export default function Profile() {
-  const [firstName, setFirstName] = useState("");
-  const [nameProfile, setNameProfile] = useState("Platon Platonov");
+  const [firstName, setFirstName] = useState('');
+  const [nameProfile, setNameProfile] = useState('Dmitry Burygin');
   const nameChange = () => {
     if (lastName && firstName) {
       setNameProfile(firstName);
     }
   };
-  const [lastName, setLastName] = useState("");
-  const [password, setPassword] = useState("");
+  const [lastName, setLastName] = useState('');
+  const [password, setPassword] = useState('');
   const [error, setError] = useState(false);
   const [errorMail, setErrorMail] = useState(false);
   const [errorPass, setErrorPass] = useState(false);
   const [state, setState] = useState({
-    email: "",
-    password: "",
+    email: '',
+    password: '',
   });
   const validateEmail = (email) => {
     const re =
@@ -54,10 +55,10 @@ export default function Profile() {
     }
   };
 
-  const [text, setText] = useState("");
-  const [textEdit, setTextEdit] = useState("");
+  const [text, setText] = useState('');
+  const [textEdit, setTextEdit] = useState('');
   const [tips, setTips] = useState([
-    { text: "Profession: Web-Developer", edit: false, opened: false },
+    { text: 'Profession: Web-Developer', edit: false, opened: false },
   ]);
   const [opened, setOpened] = useState(false);
 
@@ -69,8 +70,8 @@ export default function Profile() {
   };
   const addClick = () => {
     setTips([...tips, { text, edit: false, opened: false }]);
-    setText("");
-    setTextEdit("");
+    setText('');
+    setTextEdit('');
   };
   const deleteTip = (index) => {
     setTips(tips.filter((_, i) => i !== index));
@@ -90,7 +91,7 @@ export default function Profile() {
             obj.edit = !obj.edit;
           }
           return obj;
-        })
+        }),
       );
     }
   };
@@ -104,14 +105,14 @@ export default function Profile() {
             obj.text = textEdit;
           }
           return obj;
-        })
+        }),
       );
     }
   };
   useEffect(() => {
-    console.log("Something is Updated");
+    console.log('Something is Updated');
     return () => {
-      console.log("Deleted");
+      console.log('Deleted');
     };
   }, []);
 
@@ -120,13 +121,37 @@ export default function Profile() {
       <div className="bg-white rounded-3xl info m-auto text-left p-[20px] min-w-full">
         <div className="flex m-auto relative w-[200px] h-[200px] rounded-[50%] overflow-hidden">
           <img
-            src={require("../../../img/user.png")}
+            src="https://avatars.githubusercontent.com/u/83762401?v=4"
             alt=""
             className="w-[auto] h-[100%]"
           />
         </div>
-
-        <h3 className="text-black text-center font-bold">{nameProfile}</h3>
+        <h3 className="text-black text-center font-bold">
+          {nameProfile}&nbsp;{lastName}
+        </h3>
+        <article>
+          <a
+            target="_blank"
+            className="flex basis-5 gap-2"
+            href="https://www.facebook.com/do.right.choice">
+            <IconBrandFacebook size={30} />
+            <h3>do.right.choice</h3>
+          </a>
+          <a
+            target="_blank"
+            className="flex basis-5 gap-2"
+            href="https://www.instagram.com/do_right_choice/">
+            <IconBrandInstagram size={30} />
+            <h3>do.right.choice</h3>
+          </a>
+          <a
+            target="_blank"
+            className="flex basis-5 gap-2"
+            href="https://www.linkedin.com/in/dmitry-burygin-b57aab258/">
+            <IconBrandLinkedin size={30} />
+            <h3>do.right.choice</h3>
+          </a>
+        </article>
 
         <textarea
           className="max-h-32 appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded-xl py-3 px-4 leading-tight focus:outline-none focus:border-gray-500"
@@ -153,10 +178,7 @@ export default function Profile() {
             ) : (
               <div>
                 <div class="text-black grid max-w-3xl grid-cols-1d grid-rows-auto grid-auto-rows-min grid-auto-rows-max">
-                  <h4
-                    class="text-black overflow-hidden whitespace-pre-line break-all"
-                    key={i}
-                  >
+                  <h4 class="text-black overflow-hidden whitespace-pre-line break-all" key={i}>
                     {obj.text}
                   </h4>
                 </div>
@@ -173,8 +195,7 @@ export default function Profile() {
           <div className="w-full md:w-1/2 px-3 mb-6 md:mb-0">
             <label
               className="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2"
-              htmlFor="grid-first-name"
-            >
+              htmlFor="grid-first-name">
               First Name
             </label>
             <input
@@ -186,19 +207,16 @@ export default function Profile() {
             />
             {error && firstName.length <= 0 ? (
               <div className="error">
-                <p className="text-red-500 text-xs italic">
-                  Please fill out this field.
-                </p>
+                <p className="text-red-500 text-xs italic">Please fill out this field.</p>
               </div>
             ) : (
-              ""
+              ''
             )}
           </div>
           <div className="w-full md:w-1/2 px-3">
             <label
               className="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2"
-              htmlFor="grid-last-name"
-            >
+              htmlFor="grid-last-name">
               Last Name
             </label>
             <input
@@ -210,12 +228,10 @@ export default function Profile() {
             />
             {error && lastName.length <= 0 ? (
               <div className="error">
-                <p className="text-red-500 text-xs italic">
-                  Please fill out this field.
-                </p>
+                <p className="text-red-500 text-xs italic">Please fill out this field.</p>
               </div>
             ) : (
-              ""
+              ''
             )}
           </div>
         </div>
@@ -223,8 +239,7 @@ export default function Profile() {
           <div className="w-full px-3">
             <label
               className="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2"
-              htmlFor="grid-password"
-            >
+              htmlFor="grid-password">
               E-Mail
             </label>
             <input
@@ -235,17 +250,14 @@ export default function Profile() {
               type="email"
               placeholder="For example: test@mail.ru"
             />
-            {errorMail && (
-              <p className="text-red-500 text-xs italic">Invalid Mail</p>
-            )}
+            {errorMail && <p className="text-red-500 text-xs italic">Invalid Mail</p>}
           </div>
         </div>
         <div className="flex flex-wrap -mx-3 mb-6">
           <div className="w-full px-3">
             <label
               className="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2"
-              htmlFor="grid-password"
-            >
+              htmlFor="grid-password">
               Password
             </label>
             <input
@@ -257,12 +269,10 @@ export default function Profile() {
             />
             {errorPass ? (
               <div className="error">
-                <p className="text-red-500 text-xs italic">
-                  Please set minimum 8 characters.
-                </p>
+                <p className="text-red-500 text-xs italic">Please set minimum 8 characters.</p>
               </div>
             ) : (
-              ""
+              ''
             )}
           </div>
         </div>
@@ -270,8 +280,7 @@ export default function Profile() {
           <div className="w-full md:w-1/3 px-3 mb-6 md:mb-0">
             <label
               className="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2"
-              htmlFor="grid-city"
-            >
+              htmlFor="grid-city">
               City
             </label>
             <input
@@ -284,15 +293,13 @@ export default function Profile() {
           <div className="w-full md:w-1/3 px-3 mb-6 md:mb-0">
             <label
               className="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2"
-              htmlFor="grid-state"
-            >
+              htmlFor="grid-state">
               Country
             </label>
             <div className="relative">
               <select
                 className="block appearance-none w-full bg-gray-200 border border-gray-200 text-gray-700 py-3 px-4 pr-8 rounded-xl leading-tight focus:outline-none focus:border-gray-500"
-                id="country"
-              >
+                id="country">
                 <option>Kazakhstan</option>
                 <option>Russia</option>
                 <option>Ukraine</option>
@@ -301,8 +308,7 @@ export default function Profile() {
                 <svg
                   className="fill-current h-4 w-4"
                   xmlns="http://www.w3.org/2000/svg"
-                  viewBox="0 0 20 20"
-                >
+                  viewBox="0 0 20 20">
                   <path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z" />
                 </svg>
               </div>

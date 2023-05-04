@@ -21,43 +21,43 @@ export default function Side_Panel() {
   const Menus = [
     {
       link: 'profile',
-      title: 'Профиль',
+      title: 'Profile',
       // src: "https://raw.githubusercontent.com/Sridhar-C-25/sidebar_reactTailwind/main/src/assets/User.png",
       icons: <IconUserCircle color="white" />,
     },
     {
       link: 'team',
-      title: 'Команда',
+      title: 'Team',
       //src: "https://raw.githubusercontent.com/Sridhar-C-25/sidebar_reactTailwind/main/src/assets/User.png",
       icons: <IconUsers color="white" />,
       gap: false,
     },
     {
       link: 'shop',
-      title: 'Магазин',
+      title: 'Shop',
       //src: "https://raw.githubusercontent.com/Sridhar-C-25/sidebar_reactTailwind/main/src/assets/Calendar.png",
       icons: <IconClipboardCheck color="white" />,
     },
     {
       link: 'calendar',
-      title: 'Календарь',
+      title: 'Calendar',
       //src: "https://raw.githubusercontent.com/Sridhar-C-25/sidebar_reactTailwind/main/src/assets/Search.png",
       icons: <IconCalendar color="white" />,
     },
     {
-      title: 'Задания',
+      title: 'Tasks',
       //src: "https://raw.githubusercontent.com/Sridhar-C-25/sidebar_reactTailwind/main/src/assets/Chart.png",
       icons: <IconCircleCheck color="white" />,
     },
     {},
     {
-      title: 'Настройки',
+      title: 'Settings',
       //src: "https://raw.githubusercontent.com/Sridhar-C-25/sidebar_reactTailwind/main/src/assets/Folder.png",
       icons: <IconSettings color="white" />,
       gap: false,
     },
     {
-      title: 'Поддержка',
+      title: 'Support',
       //src: "https://raw.githubusercontent.com/Sridhar-C-25/sidebar_reactTailwind/main/src/assets/Setting.png",
       icons: <IconHelp color="white" />,
     },
@@ -69,7 +69,7 @@ export default function Side_Panel() {
     <div className="flex">
       <div
         className={`${
-          open ? 'w-96 sm:w-44 ' : 'w-0 sm:w-0'
+          open ? 'w-106 sm:w-56 ' : 'w-0 sm:w-0'
         } bg-black z-10 absolute h-screen py-3 left-0 top-0 bottom-0 pt-8 duration-300`}>
         <img
           src="https://raw.githubusercontent.com/Sridhar-C-25/sidebar_reactTailwind/main/src/assets/control.png"
@@ -77,8 +77,13 @@ export default function Side_Panel() {
          border-2 rounded-full  ${!open && 'rotate-180'}`}
           onClick={() => setOpen(!open)}
         />
-        <div className="grid grid-cols-[1fr_1fr] justify-items-center items-center">
-          <img className="w-9" src={require('../../../img/logo.webp')} alt="" />
+        <div className="grid grid-cols-[25%_75%] justify-items-center items-center">
+          <img
+            className="w-14 grid justify-items-center ml-7"
+            src={require('../../../img/logo.webp')}
+            alt=""
+          />
+          <h2 className={`duration-200 text-4xl ${!open && 'scale-0'}`}>BWP</h2>
           {/* <h4 className={`duration-200 ${!open && 'scale-0'}`}>Admin Panel</h4> */}
           {/* <IconMenu2 className={`duration-200 ${!open && 'scale-0'}`} color="white" /> */}
         </div>
